@@ -1,0 +1,111 @@
+@import url('./global.css');
+@import url('./components/header.css');
+@import url(footer.css);
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 200px;
+    gap: 15px;
+    margin-top: 4%;
+}
+
+
+.main-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30%;
+    margin-bottom: 30%;
+}
+
+.paraf{
+    text-align: center;
+    font-size: 16px;
+}
+
+h1{
+    background: linear-gradient(45deg, var(--cor-gradiente-1), var(--cor-gradiente-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+#paragrafo{
+    padding: 20px;
+}
+
+.main-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 35%;
+    margin-bottom: 30%;
+    margin-left: 60px;
+}
+
+.img{
+    max-width: 40%;
+    max-height: 45%;
+    object-fit: contain;
+    border-radius: 10px;
+    padding: 2px;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.img:hover{
+    transform: scale(1.2);
+    box-shadow: var(--box-shadow);
+}
+
+#buton::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(45deg, var(--cor-gradiente-1), var(--cor-gradiente-2));
+    transition: width 0.3s ease;
+}
+
+/* quando o mouse passar por cima do texto, o pseudo-elemento vai ocupar a largura total do texto */
+#buton:hover::after {
+    width: 100%;
+}
+
+/* quando o mouse passar por cima do texto, o texto vai ter o efeito neon */
+#buton:hover {
+    background: linear-gradient(45deg, var(--cor-gradiente-1), var(--cor-gradiente-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* o ultimo elemento da lista */
+#buton{
+    background: var(--cor-neon);
+    color: var(--cor-branca);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
+}
+
+/* o pseudo-elemento do ultimo elemento da lista nao vai ser exibido */
+#buton::after {
+    display: none;
+}
+
+/* quando o mouse passar por cima do ultimo elemento da lista, o ultimo elemento da lista vai ter o efeito neon */
+#buton:hover {
+    background: linear-gradient(45deg, var(--cor-gradiente-1), var(--cor-gradiente-2));
+    color: var(--cor-branca);
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+} 
